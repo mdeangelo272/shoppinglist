@@ -1,0 +1,60 @@
+.banner {
+   background-size: cover; 
+   background-repeat: no-repeat;
+   position: relative;
+   color: #F5F5F5;
+   text-align: center;
+   text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+   padding-bottom:130px;
+}
+
+.banner-homepage {
+    @extend .banner;
+    background-image: url(/assets/images/shopping-wallpaper-1920x1080.jpg); 
+    padding-top: 30px;
+    padding-right: 15px;
+
+    h1 {
+    font-size: 56px;
+    }
+}
+
+
+
+
+/*Box shown up on the top of banner image*/
+.action_box {
+    margin: 112px auto 0;
+    max-width: 85%;
+    display: table;
+    /*border-radius: 0.5em;*/
+    padding-bottom: 80px; 
+}
+
+.homepage_action_box {
+    @extend .action_box;
+   background-color: rgba(0,0,0,0.75);
+}
+
+
+/* Big Button*/
+.jumbo-button, .jumbo-button:active, .jumbo-button:hover, .jumbo-button:focus {
+    padding: 4px 20px;
+    -webkit-font-smoothing: antialiased;
+    color: #FFF;
+    text-shadow: 0 -1px 0 rgba(0,0,0,.25);
+    background-color: #238de5;
+    border-color: #238de5;
+    border-color: rgba(0,0,0,.1)rgba(0,0,0,.1)rgba(0,0,0,.25);
+    font-weight:500;
+
+    padding: 9px 20px;
+    font-size: 26px;
+    line-height: normal;
+    border-radius: 5px;
+}
+
+.btn-homepage {
+    @extend .jumbo-button;
+    border-radius: 0 !important;
+}

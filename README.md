@@ -65,6 +65,11 @@ $ npm install express
 $ npm install -g grunt-cli
 ```
 
+####Installing bower globally
+```
+$ npm install -g bower
+```
+
 #### Installing Yoeman globally
 
 ```
@@ -77,12 +82,6 @@ $ npm install -g yo
 $ npm install -g generator-angular-fullstack
 ```
 
-- Creating seed project using Yoeman
-
-```
-$ yo
-```
-
 ####Installing mongodb
 [Click here for installation steps](https://www.digitalocean.com/community/tutorials/how-to-install-mongodb-on-ubuntu-12-04)
 
@@ -91,6 +90,30 @@ $ yo
 ```
 sudo apt-get update
 sudo apt-get install nginx
+```
+
+##Implementation
+
+######Create seed project
+Create seed project using [Yeoman angular fullstack generator](https://github.com/DaftMonk/generator-angular-fullstack)
+
+```
+$ yo
+```
+
+######Create Shoppinglist API endpoints
+```
+yo angular-fullstack:endpoint shoppinglist
+```
+
+######Create Shoppinglist route
+```
+yo angular-fullstack:route shoppinglist
+```
+
+######Create an AngularJS service for Shoppinglist
+```
+yo angular-fullstack:service shoppinglistservice
 ```
 
 ## Running Application
@@ -112,30 +135,22 @@ $ forever start server/app.js
 $ forever stop server/app.js
 ```
 
-##Implementation
+##Deployment
 
-######Create seed project
-Used [Yeoman angular fullstack generator](https://github.com/DaftMonk/generator-angular-fullstack)
-
-######Create Shoppinglist API endpoints
+####Deploy on openshift
 ```
-yo angular-fullstack:endpoint shoppinglist
+grunt
+grunt buildcontrol:openshift
 ```
 
-######Create Shoppinglist route
-```
-yo angular-fullstack:route shoppinglist
-```
+####Deploy on nginx running on 2 instances of vagrant
 
-######Create Shoppinglist controller
-```
-yo angular-fullstack:controller shoppinglistcontroller
-```
+####Load Balancer
 
-######Create an AngularJS service for Shoppinglist
-```
-yo angular-fullstack:service shoppinglistservice
-```
 
+##How to test
+
+
+##Future development
 
 

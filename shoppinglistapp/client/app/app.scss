@@ -1,0 +1,91 @@
+$icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/";
+$fa-font-path: "/bower_components/font-awesome/fonts";
+
+@import 'bootstrap-sass-official/vendor/assets/stylesheets/bootstrap';
+@import 'font-awesome/scss/font-awesome';
+@import url(http://fonts.googleapis.com/css?family=RobotoDraft:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en);
+
+/**
+ * App-wide Styles
+ */
+
+// Component styles are injected through grunt
+// injector
+@import 'account/login/login.scss';
+@import 'admin/admin.scss';
+@import 'main/main.scss';
+@import 'footer/footer.scss';
+@import 'modal/modal.scss';
+@import 'sidebar/sidebar.scss';
+// endinjector
+
+
+$font-stack: 'RobotoDraft', 'Helvetica Neue', Helvetica, Arial;
+$primary-color-700: #238de5;
+$primary-color-500: #7bd454;
+
+
+* {
+  /*box-sizing: border-box;*/
+}
+
+html, body {
+  height: 100%;
+  padding: 0;
+  padding-top: 25px;
+  margin: 0;
+}
+body {
+  font-family: $font-stack;
+  /*font-weight: 300;*/
+  background-color: #FFFFFF;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+h2, h3 {
+  font-weight: 300;
+  margin: 0;
+}
+h3 {
+  font-weight: 400;
+}
+.navbar-default {
+  background-color: $primary-color-700;
+  border-color: #0D47A1;
+  -moz-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+   /*opacity: 0.4;*/
+}
+
+.navbar-default, .navbar-brand, .navbar-brand a:hover, .navbar-brand:hover  {
+  color: #FFFFFF !important;
+}
+
+
+ul.nav a:hover {
+ color: #fff !important;
+}
+
+.sub-nav {
+  background-color:#f3f3f3;
+  //position: fixed;
+  top: 50px;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  //left: 300px;
+}
+
+label {
+font-weight: 300;
+}
+
+.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+border-color: $primary-color-700;
+box-shadow: none !important;
+}
+
+/*Its a fix for active class on navbar*/
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
+color: #fff;
+background-color: $primary-color-700;
+}
