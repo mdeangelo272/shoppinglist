@@ -39,7 +39,7 @@ This document contains implementation details of shooping list app along with th
 
 ## Installation
 
-### Installing node
+#### Installing node
 
 ```
 $ sudo apt-get install python-software-properties
@@ -53,19 +53,19 @@ Then, you have the latest version of node.js installed.
 $ ln -s /usr/bin/nodejs /usr/bin/node
 ```
 
-### Installing npm
+#### Installing npm
 ```
 $ sudo apt-get install npm
 $ npm install express
 ```
 
-### Installing grunt globally
+#### Installing grunt globally
 
 ```bash
 $ npm install -g grunt-cli
 ```
 
-### Installing Yoeman globally
+#### Installing Yoeman globally
 
 ```
 $ npm install -g yo
@@ -83,11 +83,11 @@ $ npm install -g generator-angular-fullstack
 $ yo
 ```
 
-###Installing mongodb
+####Installing mongodb
 [Click here for installation steps](https://www.digitalocean.com/community/tutorials/how-to-install-mongodb-on-ubuntu-12-04)
 
 
-###Installing nginx
+####Installing nginx
 ```
 sudo apt-get update
 sudo apt-get install nginx
@@ -105,7 +105,7 @@ $ grunt serve:dist
 ```
 ### Running application in background
 
-####Install forever
+#####Install forever
 ```
 $ sudo npm install forever -g
 $ forever start server/app.js
@@ -114,7 +114,7 @@ $ forever stop server/app.js
 
 ##Implementation
 
-####Create seed project
+######Create seed project
 Used [Yeoman angular fullstack generator](https://github.com/DaftMonk/generator-angular-fullstack)
 
 ######Create Shoppinglist API endpoints
