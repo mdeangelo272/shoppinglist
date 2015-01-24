@@ -84,7 +84,7 @@ $ yo
 ```
 
 ###Installing mongodb
-[here you go](https://www.digitalocean.com/community/tutorials/how-to-install-mongodb-on-ubuntu-12-04)
+[Click here for installation steps](https://www.digitalocean.com/community/tutorials/how-to-install-mongodb-on-ubuntu-12-04)
 
 
 ###Installing nginx
@@ -114,25 +114,25 @@ $ forever stop server/app.js
 
 ##Implementation
 
-###Create seed project
+####Create seed project
 Used [Yeoman angular fullstack generator](https://github.com/DaftMonk/generator-angular-fullstack)
 
-###Create Shoppinglist API endpoints
+####Create Shoppinglist API endpoints
 ```
 yo angular-fullstack:endpoint shoppinglist
 ```
 
-###Create Shoppinglist route
+####Create Shoppinglist route
 ```
 yo angular-fullstack:route shoppinglist
 ```
 
-###Create Shoppinglist controller
+####Create Shoppinglist controller
 ```
 yo angular-fullstack:controller shoppinglistcontroller
 ```
 
-###Create an AngularJS service for Shoppinglist
+####Create an AngularJS service for Shoppinglist
 ```
 yo angular-fullstack:service shoppinglistservice
 ```
