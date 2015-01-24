@@ -20,7 +20,7 @@ This document contains implementation details of shooping list app along with th
 
 ##REST API endpoints
 
-###Shopping list API
+####Shopping list API
 - GET    v1/api/shoppinglist         Get all shopping list
 - GET    vi/api/shoppinglist/<id>    Get a shopping list
 - POST   vi/api/shoppinglist         Create a shopping list
@@ -30,7 +30,7 @@ This document contains implementation details of shooping list app along with th
 
 **Note:** Keeping Mobile First approach in mind, REST API should be stateless
 
-###Auth API
+####Auth API
 - POST api/auth/tokenGen      Generate auth token
 - POST api/auth/tokenVal      Validate auth token
 - POST api/auth/tokenDelete   Delete auth token
@@ -103,9 +103,9 @@ $ bower install
 $ grunt serve OR
 $ grunt serve:dist
 ```
-### Running application in background
+#### Running application in background
 
-#####Install forever
+######Install forever
 ```
 $ sudo npm install forever -g
 $ forever start server/app.js
