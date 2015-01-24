@@ -117,22 +117,22 @@ $ forever stop server/app.js
 ####Create seed project
 Used [Yeoman angular fullstack generator](https://github.com/DaftMonk/generator-angular-fullstack)
 
-####Create Shoppinglist API endpoints
+######Create Shoppinglist API endpoints
 ```
 yo angular-fullstack:endpoint shoppinglist
 ```
 
-####Create Shoppinglist route
+######Create Shoppinglist route
 ```
 yo angular-fullstack:route shoppinglist
 ```
 
-####Create Shoppinglist controller
+######Create Shoppinglist controller
 ```
 yo angular-fullstack:controller shoppinglistcontroller
 ```
 
-####Create an AngularJS service for Shoppinglist
+######Create an AngularJS service for Shoppinglist
 ```
 yo angular-fullstack:service shoppinglistservice
 ```
