@@ -139,8 +139,17 @@ $ forever stop server/app.js
 
 ####Deploy on openshift
 ```
-grunt
-grunt buildcontrol:openshift
+$ yo angular-fullstack:openshift
+
+If your openshift token has been expired then 
+
+$ rhc authorization
+
+Pushing updates
+$ grunt
+
+Commit and push the resulting build, located in your dist folder:
+$ grunt buildcontrol:openshift
 ```
 
 ####Deploy on nginx running on 2 instances of vagrant
