@@ -250,8 +250,25 @@ $ forever start server/app.js
 this will run application on port 8080.
 
 ####Load Balancer
+[nginx load balancer configuration](https://www.digitalocean.com/community/tutorials/how-to-set-up-nginx-load-balancingl)
+
+Update your nginx config file as:
+
+```
+upstream backend  {
+  server 127.0.0.1:4567 max_fails=1  fail_timeout=5s;
+  server 127.0.0.1:4568 max_fails=1  fail_timeout=5s;
+}
+
+server {
+  location / {
+    proxy_pass  http://backend;
+  }
+}
 
 
+
+```
 ##How to test
 
 
