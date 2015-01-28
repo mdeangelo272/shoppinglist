@@ -1,45 +1,49 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
-<div ng-include="'components/sidebar/sidebar.html'"></div>
+<!-- <div ng-include="'components/sidebar/sidebar.html'"></div> -->
 
 <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
     <h1 class="page-header">Create Shopping List</h1>
 
        <form class="form" name="form" ng-submit="createList(form)" novalidate>
 
-        <div class="form-group" ng-class="{ 'has-success': form.name.$valid && submitted,
-                                            'has-error': form.name.$invalid && submitted }">
+        <div class="form-group" ng-class="{ 'has-success': form.listName.$valid && submitted,
+                                            'has-error': form.listName.$invalid && submitted }">
           <label>Name</label>
 
-          <input type="text" name="name" class="form-control" ng-model="user.name"
+          <input type="text" name="listName" class="form-control" ng-model="shopList.listName"
                  required/>
-          <p class="help-block" ng-show="form.name.$error.required && submitted">
+      <!--     <p class="help-block" ng-show="form.name.$error.required && submitted">
             A name is required
-          </p>
+          </p> -->
         </div>
-
-        
 
         <div>
           <button class="btn btn-inverse btn-lg btn-login" type="submit">
             Create List
           </button>
-          
         </div>
 
       </form>
+</div>
 
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading"></div>
+  <div class="panel-body">
+  <table class="table">
+    <tr ng-repeat="shop in completeShoppingList">
+      <td>[{{$index + 1}}] {{shop.name}} </td>
+      <td>
+         <a class="remove-icon" href="#" ng-click="deleteList(shop._id, $index)">
+            <span class="fa fa-remove fa-2x"></span>
+          </a> 
+      </td>
+    </tr>
+  </table>
+  </div>
+</div>
 
-      <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-      
-
-      <ul class="example-animate-container">
-      <li class="animate-repeat" ng-repeat="shop in completeShoppingList">
-        [{{$index + 1}}] {{shop.name}} 
-      </li>
-      <ul>
-
-      </div>
-
-
+     
 </div>
 

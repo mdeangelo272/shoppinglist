@@ -151,7 +151,15 @@ $ grunt build
 Commit and push the resulting build, located in your dist folder:
 $ grunt buildcontrol:openshift
 ```
+#### Setting up vagrant
 
+```
+install vagrant
+
+vagrant init hashicorp/precise32
+
+vagrant up
+```
 ####Deploy on nginx running on 2 instances of vagrant
 
 ####Load Balancer

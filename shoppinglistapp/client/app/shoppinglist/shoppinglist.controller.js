@@ -17,15 +17,26 @@ angular.module('shoppinglistappApp')
 
       if(form.$valid) {
         shoppinglistservice.createList({
-          name: $scope.user.name,
+          name: $scope.shopList.listName,
         }).success(function(data) {
 		  	console.log("Success");
 		  	$scope.completeShoppingList.push(data);
+		  	$scope.shopList.listName = "";
 		  }).error(function(data) {
 		  	console.log("error");
 		});
         
       }
+    };
+
+    $scope.deleteList = function(id, position) {
+        shoppinglistservice.deleteList(id).success(function(data) {
+		  	console.log("Success" + id);
+		  	$scope.completeShoppingList.splice(position, 1);
+		  }).error(function(data) {
+		  	console.log("error");
+		});
+        
     };
 
    /*var id = $location.url().split('/')[1];
