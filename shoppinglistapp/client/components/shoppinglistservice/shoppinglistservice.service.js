@@ -22,6 +22,13 @@ angular.module('shoppinglistappApp')
 	        $log.debug("deleteList");
 	        var request = $http.delete('/v1/api/shoppinglists/'+id);
 	        return request;
+	    },
+
+	    deactivateList: function(shopList) {
+	        $log.debug("deactivateList");
+	        shopList.active = false;
+	        var request = $http.patch('/v1/api/shoppinglists/'+shopList.id, shopList);
+	        return request;
 	    }
 	   
    };

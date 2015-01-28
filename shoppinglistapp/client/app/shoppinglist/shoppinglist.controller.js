@@ -39,6 +39,21 @@ angular.module('shoppinglistappApp')
         
     };
 
+    $scope.deactiveList = function(id, position) {
+    	var shopList = {
+          id: id,
+          active: false
+        };
+
+        shoppinglistservice.deactivateList(shopList).success(function(data) {
+		  	console.log("Success" + id);
+		  	$scope.completeShoppingList[position].active = false;
+		  }).error(function(data) {
+		  	console.log("error");
+		});
+        
+    };
+
    /*var id = $location.url().split('/')[1];
    if(id === 'viewshoppinglist') {
       shoppinglistservice.viewList()

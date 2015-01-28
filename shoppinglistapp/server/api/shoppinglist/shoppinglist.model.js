@@ -6,7 +6,10 @@ var mongoose = require('mongoose'),
 var ShoppinglistSchema = new Schema({
   name: String,
   info: String,
-  active: Boolean
+  active: {
+    type: Boolean,
+    default: true
+  }
 });
 
 module.exports = mongoose.model('Shoppinglist', ShoppinglistSchema);

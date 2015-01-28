@@ -12,15 +12,11 @@
 
           <input type="text" name="listName" class="form-control" ng-model="shopList.listName"
                  required/>
-      <!--     <p class="help-block" ng-show="form.name.$error.required && submitted">
-            A name is required
-          </p> -->
+     
         </div>
 
         <div>
-          <button class="btn btn-inverse btn-lg btn-login" type="submit">
-            Create List
-          </button>
+         
         </div>
 
       </form>
@@ -28,12 +24,19 @@
 
 <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 <div class="panel panel-default">
-  <!-- Default panel contents -->
   <div class="panel-heading"></div>
   <div class="panel-body">
   <table class="table">
     <tr ng-repeat="shop in completeShoppingList">
-      <td>[{{$index + 1}}] {{shop.name}} </td>
+      <td>
+        <div ng-show="!shop.active">
+          <input type="checkbox" checked disabled ng-click="deactiveList(shop._id, $index)">
+        </div>
+         <div ng-show="shop.active">
+          <input type="checkbox" ng-click="deactiveList(shop._id, $index)">
+        </div>
+      </td>
+      <td ng-class="{strike: !shop.active}">{{shop.name}} </td>
       <td>
          <a class="remove-icon" href="#" ng-click="deleteList(shop._id, $index)">
             <span class="fa fa-remove fa-2x"></span>
