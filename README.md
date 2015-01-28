@@ -160,7 +160,94 @@ vagrant init hashicorp/precise32
 
 vagrant up
 ```
-####Deploy on nginx running on 2 instances of vagrant
+#####Installing dependencies 
+- install nodejs
+- install forever
+- install nginx
+- install mongodb
+
+#####[Port forwarding](http://docs.vagrantup.com/v2/getting-started/networking.html)
+This allows you to access a port on your own machine, but actually have all the network traffic forwarded to a specific port on the guest machine.
+```
+ Update Vagrantfile with below content
+
+  config.vm.box = "hashicorp/precise32"
+  config.vm.network :forwarded_port, host: 4567, guest: 80
+
+```
+- setting node_env
+ - vi ~./bashrc 
+ - export NODE_ENV=production
+ - source ~/.bashrc
+
+- Setting up nginx
+  - create configuration file in /etc/nginx/site-available
+  - create link in /etc/nginx/site-enabled
+    - sudo ln -s /etc/nginx/sites-available/shoppinglistapp /etc/nginx/sites-enabled/shoppinglistapp
+
+Content for /etc/nginx/sites-available/shoppinglistapp configuration file
+
+```
+server {
+    listen 80;
+
+    server_name shoppinglistapp;
+
+    location / {
+        proxy_pass http://localhost:8080;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_cache_bypass $http_upgrade;
+    }
+}
+
+```
+Our First vagrant machine is setup. Now we will create copy of this vagrant machine.
+
+
+ ##### Copying vagrant box
+ ```
+ Run below command in home directory of first vagrant machine.
+
+ $ vagrant package
+ ```
+ ##### Creating another vagrant machine
+ ```
+Creating directory for second vagrant machine.
+
+ $ mkdir vagrantMachine2
+ $ cd vagrantMachine2
+ $ vagrant init
+
+Update Vagrantfile with below content
+
+  config.vm.box = "base"
+  config.vm.box_url = "package.box"
+  config.vm.network :forwarded_port, host: 4568, guest: 80
+
+Running vagrant machine
+
+ $ vagrant up
+
+
+ ```
+
+####Deploy code on nginx running on 2 instances of vagrant
+
+Run below command in your project home directory
+```
+$ grunt build
+
+```
+Copy dist directory and node_modules into both vagrant machine
+
+Go to dist and run below command
+```
+$ forever start server/app.js
+```
+this will run application on port 8080.
 
 ####Load Balancer
 
