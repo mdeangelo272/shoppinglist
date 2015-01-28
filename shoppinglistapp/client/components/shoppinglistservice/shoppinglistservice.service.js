@@ -9,9 +9,8 @@ angular.module('shoppinglistappApp')
 	   	createList: function(shoppingList) {
 	        console.log("createList");
 
-	        $http.post('/v1/api/shoppinglists', shoppingList).success(function(shoppingList) {
-			    return shoppingList;
-	        });
+	        var request = $http.post('/v1/api/shoppinglists', shoppingList);
+	        return request;
 	    },
 
         viewList: function() {

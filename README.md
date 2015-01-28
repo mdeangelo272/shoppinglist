@@ -1,5 +1,5 @@
 #Shopping List
-
+URL: http://shoppinglistapp-varunhooda.rhcloud.com/
 
 ###Purpose
 
@@ -146,7 +146,7 @@ If your openshift token has been expired then
 $ rhc authorization
 
 Pushing updates
-$ grunt
+$ grunt build
 
 Commit and push the resulting build, located in your dist folder:
 $ grunt buildcontrol:openshift
