@@ -274,4 +274,11 @@ server {
 
 ##Future development
 
+### Docker Support
+#####[Installing Docker](https://docs.docker.com/installation/ubuntulinux/#ubuntu-trusty-1404-lts-64-bit)
+```
+$ sudo apt-get update
+$ sudo apt-get install docker.io
+```
+
 
