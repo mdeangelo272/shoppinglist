@@ -1,5 +1,4 @@
 #Shopping List
-URL: http://shoppinglistapp-varunhooda.rhcloud.com/
 
 ###Purpose
 
@@ -38,6 +37,12 @@ This document contains implementation details of shooping list app along with th
 
 
 ## Installation
+
+#### Installing git
+```
+sudo apt-get update
+sudo apt-get -y install git
+```
 
 #### Installing node
 
@@ -141,7 +146,7 @@ $ forever stop server/app.js
 ```
 $ yo angular-fullstack:openshift
 
-If your openshift token has been expired then 
+If your openshift token has been expired then
 
 $ rhc authorization
 
@@ -160,7 +165,7 @@ vagrant init hashicorp/precise32
 
 vagrant up
 ```
-#####Installing dependencies 
+#####Installing dependencies
 - install nodejs
 - install forever
 - install nginx
@@ -176,7 +181,7 @@ This allows you to access a port on your own machine, but actually have all the 
 
 ```
 - setting node_env
- - vi ~./bashrc 
+ - vi ~./bashrc
  - export NODE_ENV=production
  - source ~/.bashrc
 
@@ -280,5 +285,3 @@ server {
 $ sudo apt-get update
 $ sudo apt-get install docker.io
 ```
-
-
